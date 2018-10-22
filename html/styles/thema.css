@@ -1,0 +1,16 @@
+html, body
+{
+
+
+
+}
+header h1{
+    margin: 0;
+    padding: 0;
+    color: #FF0000;    
+}                 
+header h2{
+    margin: 0;
+    padding: 0;
+    color: #9F0000;
+}

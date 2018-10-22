@@ -17,6 +17,7 @@
     <meta name="keywords" content="Raspberry pi, Heimautomatisierung">
 
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="styles/thema.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
