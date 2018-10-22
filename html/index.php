@@ -12,7 +12,7 @@
     <title>C.A. Home</title>
 
     <meta charset="UTF-8">
-    <meta name="description" content="wein Kleines Intranet">
+    <meta name="description" content="Mein Kleines Intranet">
     <meta name="author" content="Carsten Andrzejak">
     <meta name="keywords" content="Raspberry pi, Heimautomatisierung">
 
