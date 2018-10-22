@@ -1,0 +1,7 @@
+[Options]
+Name=Test-Projekt
+[Dir]
+Files=..\html\
+Images=..\html\img
+Css=..\html\styles
+Includes=..\html\includes
