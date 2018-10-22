@@ -1,6 +1,14 @@
 html, body {
     background-color: #000000;
-    color: #FFFFFF;
+    color: #FFFFFF;    
+    margin: 0;
+    padding: 0;
+}
+header {  
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0px;
 }
 header h1{
     margin: 0;
@@ -11,4 +19,28 @@ header h2{
     margin: 0;
     padding: 0;
     color: #9F0000;
+} 
+section {    
+    margin: 0;
+    padding: 8px;
+    position: fixed;
+    top: 80px;
+    bottom: 40px; 
+    left: 5px;
+    right: 5px;
+    border: 1px solid #333333;
+}
+section h3 {  
+    margin: 0;
+    padding: 0;
+    color: #0000FF;   
+}
+footer {     
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0px;
+} 
+footer p { 
+    text-align: center;    
 }
