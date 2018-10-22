@@ -1,1 +1,7 @@
-webocton.data/*
+webocton.data
+webocton.data/Test-Projekt_todo.dat
+webocton.data/Test-Projekt_notice.dat
+webocton.data/Test-Projekt_files.dat
+webocton.data/Test-Projekt_excludedsubdirs.dat
+webocton.data/Test-Projekt_colors.dat
+webocton.data/Test-Projekt.wop
