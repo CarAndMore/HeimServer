@@ -32,11 +32,12 @@
             <div id="news" hidden="hidden">
                 Hier kommt bald der gro&szlig;e Wald!
             </div>
+            <div id="uhrzeit"></div>
         </header>
         <section>
             <h3>
                 Hallo Welt
-            </h3>
+            </h3>   
             <article>
                 <h4 class="headline">
                     &Uuml;berschrift
@@ -47,6 +48,18 @@
                     tut er aber leider nicht. und das ist sehr schade.
                     warum tut er das nicht? los sprich!
                 </p>
+            </article>
+
+            <article>        
+                <h4 class="headline">
+                    FreeSpace
+                </h4>
+                <?php     
+                    include ("includes/freespace_Class.php"); 
+                    $driveListe = new freespace();
+                    // echo $driveListe->print_GekTab();
+                    echo $driveListe->printCompactTab();
+                ?>        
             </article>
         </section>
         <footer>

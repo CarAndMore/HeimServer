@@ -1,0 +1,26 @@
+<div id="lable_datum"></div>
+<div id="lable_uhrzeit"></div>
+<script>
+    var heute = new Date(); 
+    
+    var Day = heute.getDate();     
+    var Month = heute.getMonth() +1;
+    if (Month < 10) {
+       Month = "0" + (heute.getMonth() +1)
+    }
+    var Year = heute.getFullYear();  
+    
+    var Hours = heute.getHours();
+    var Minutes = heute.getMinutes();
+    if (heute.getMinutes() < 10) {
+       Minutes = "0" + heute.getMinutes() 
+    } 
+    var Seconds = heute.getSeconds();
+    if (heute.getSeconds() < 10) {
+       Seconds = "0" + heute.getSeconds();
+    }
+    var Datum = Day + "." + Month + "." + Year;
+    var Uhrzeit = Hours + ":" + Minutes + ":" + Seconds;
+    $("#lable_datum").text(Datum);
+    $("#lable_uhrzeit").text(Uhrzeit);
+</script>
