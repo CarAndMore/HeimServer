@@ -31,44 +31,62 @@
                 <h2>auf C.A. HOME</h2>
             </div>
             <div id="news" hidden="hidden">
-                 <table>
+                 <table cellpadding="5" cellspacing="0">
                     <tr>
                         <th></th>
                         <th>Temperature</th>
                         <th>Humidity</th>
                         <th>Pressure</th>
+                        <th>Messung</th>
                     </tr>
                     <tr>
                         <td>Au&szlig;en</td>
                         <td id="temperature1" align="right"></td>
                         <td id="humidity1" align="right"></td>
-                        <td id="pressure1" align="right"></td>
+                        <td id="pressure1" align="right"></td> 
+                        <td id="bme280_1" align="right"></td>
                     </tr>
                     <tr>
                         <td id="tn0"></td>
                         <td id="tv0" align="right"></td>
+                        <td align="center">nc</td>
+                        <td align="center">nc</td>
+                        <td id="tt0" align="right"></td> 
                     </tr>  
                     <tr>
                         <td>Innen</td>
                         <td id="temperature0" align="right"></td>
                         <td id="humidity0" align="right"></td>
-                        <td id="pressure0" align="right"></td>
+                        <td id="pressure0" align="right"></td>  
+                        <td id="bme280_0" align="right"></td>
                     </tr>
                     <tr>
                         <td id="tn1"></td>
-                        <td id="tv1" align="right"></td>
+                        <td id="tv1" align="right"></td> 
+                        <td align="center">nc</td>
+                        <td align="center">nc</td>
+                        <td id="tt1" align="right"></td>
                     </tr>
                     <tr>
                         <td id="tn2"></td>
-                        <td id="tv2" align="right"></td>
+                        <td id="tv2" align="right"></td> 
+                        <td align="center">nc</td>
+                        <td align="center">nc</td>
+                        <td id="tt2" align="right"></td>
                     </tr>
                     <tr>
                         <td id="tn3"></td>
-                        <td id="tv3" align="right"></td>
+                        <td id="tv3" align="right"></td> 
+                        <td align="center">nc</td>
+                        <td align="center">nc</td>
+                        <td id="tt3" align="right"></td>
                     </tr>
                     <tr>
                         <td id="tn4"></td>
-                        <td id="tv4" align="right"></td>
+                        <td id="tv4" align="right"></td> 
+                        <td align="center">nc</td>
+                        <td align="center">nc</td>
+                        <td id="tt4" align="right"></td>
                     </tr>
                  </table>
             </div>
@@ -77,18 +95,6 @@
         <section>
             <h3>
                 Hallo Welt 
-                <br />
-                <button type="button" onclick='doit(Massage_10);'>off</button>
-                <button type="button" onclick='doit(Massage_11);'>on</button>
-                <span id="sw1">1</span>
-                <br />
-                <button type="button" onclick='doit(Massage_20);'>off</button>
-                <button type="button" onclick='doit(Massage_21);'>on</button> 
-                <span id="sw2">2</span>
-                <br />
-                <button type="button" onclick='doit(Massage_30);'>off</button>
-                <button type="button" onclick='doit(Massage_31);'>on</button> 
-                <span id="sw3">3</span>
             </h3>   
             <article>
                 <h4 class="headline">
@@ -112,17 +118,64 @@
                     echo $driveListe->printCompactTab();
                 ?>
             </article>
-            <!--
+            
             <article>
                 <h4 class="headline">
-                    frame
+                    RFControl
                 </h4>
-                <p>
-                     <iframe src="http://rpi3:1880/ui/#/0)" width="435"  height="300"></iframe>
-                     
-                </p>     
+                <table>
+                    <tr>
+                        <td>
+                <table>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "1", "1") ;'>on</button></td>
+                        <td>AA</td>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "1", "0") ;'>off</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "2", "1") ;'>on</button></td>
+                        <td>BB</td>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "2", "0") ;'>off</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "3", "1") ;'>on</button></td>
+                        <td>CC</td>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "3", "0") ;'>off</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "4", "1") ;'>on</button></td>
+                        <td>DD</td>
+                        <td><button class="bnt_rfc" onclick='rfc("10111", "4", "0") ;'>off</button></td>
+                    </tr>
+                </table>
+                        </td>
+                        <td>
+                <table>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "1", "1") ;'>on</button></td>
+                        <td>AA</td>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "1", "0") ;'>off</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "2", "1") ;'>on</button></td>
+                        <td>BB</td>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "2", "0") ;'>off</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "3", "1") ;'>on</button></td>
+                        <td>CC</td>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "3", "0") ;'>off</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "4", "1") ;'>on</button></td>
+                        <td>DD</td>
+                        <td><button class="bnt_rfc" onclick='rfc("00111", "4", "0") ;'>off</button></td>
+                    </tr>
+                </table>
+                        </td>
+                    </tr>
+                </table>
             </article>
-            -->
         </section>
         <footer>
             <p>

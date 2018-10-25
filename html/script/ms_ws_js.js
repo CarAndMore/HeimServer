@@ -9,6 +9,16 @@ function wsConnect() {
         var line = "";  // or uncomment this to overwrite the existing message
         // parse the incoming message as a JSON object
         var data = msg.data;
+        var heute = new Date(); var Hours = heute.getHours();
+        var Minutes = heute.getMinutes();
+        if (heute.getMinutes() < 10) {
+           Minutes = "0" + heute.getMinutes()
+        }
+        var Seconds = heute.getSeconds();
+        if (heute.getSeconds() < 10) {
+           Seconds = "0" + heute.getSeconds();
+        }
+        var Uhrzeit = Hours + ":" + Minutes + ":" + Seconds;
         var jsondata = JSON.parse(data); 
         if (jsondata.sensor == "bme280") { 
             if (jsondata.id == 0) {
@@ -20,7 +30,8 @@ function wsConnect() {
                 }
                 if (jsondata.type == "pressure") {
                     document.getElementById('pressure0').innerHTML = jsondata.value;
-                }
+                }      
+                document.getElementById('bme280_0').innerHTML = Uhrzeit;
             }
             if (jsondata.id == 1) {
                 if (jsondata.type == "temperature") {
@@ -31,41 +42,36 @@ function wsConnect() {
                 }
                 if (jsondata.type == "pressure") {
                     document.getElementById('pressure1').innerHTML = jsondata.value;
-                }
+                }        
+                document.getElementById('bme280_1').innerHTML = Uhrzeit;
             }
         }
         if (jsondata.sensor == "ds18b20") {
             if (jsondata.id == 0) {
                 document.getElementById('tn0').innerHTML = jsondata.ort;
                 document.getElementById('tv0').innerHTML = jsondata.value;
+                document.getElementById('tt0').innerHTML = Uhrzeit;
             }
             if (jsondata.id == 1) {
                 document.getElementById('tn1').innerHTML = jsondata.ort;
-                document.getElementById('tv1').innerHTML = jsondata.value;
+                document.getElementById('tv1').innerHTML = jsondata.value; 
+                document.getElementById('tt1').innerHTML = Uhrzeit;
             }
             if (jsondata.id == 2) {
                 document.getElementById('tn2').innerHTML = jsondata.ort;
-                document.getElementById('tv2').innerHTML = jsondata.value;
+                document.getElementById('tv2').innerHTML = jsondata.value; 
+                document.getElementById('tt2').innerHTML = Uhrzeit;
             }
             if (jsondata.id == 3) {
                 document.getElementById('tn3').innerHTML = jsondata.ort;
-                document.getElementById('tv3').innerHTML = jsondata.value;
+                document.getElementById('tv3').innerHTML = jsondata.value; 
+                document.getElementById('tt3').innerHTML = Uhrzeit;
             }
             if (jsondata.id == 4) {
                 document.getElementById('tn4').innerHTML = jsondata.ort;
-                document.getElementById('tv4').innerHTML = jsondata.value;
+                document.getElementById('tv4').innerHTML = jsondata.value; 
+                document.getElementById('tt4').innerHTML = Uhrzeit;
             }
-        }
-        if (jsondata.type == "io") {
-            if (jsondata.id == 1) {
-                document.getElementById('sw1').innerHTML = jsondata.value;
-            }
-            if (jsondata.id == 2) {
-                document.getElementById('sw2').innerHTML = jsondata.value;
-            }
-            if (jsondata.id == 3) {
-                document.getElementById('sw3').innerHTML = jsondata.value;
-            }    
         }
     }
     ws.onopen = function() {
@@ -90,4 +96,8 @@ var Massage_30 = '{"type": "io", "id": 3, "value": "off"}';
 
 function doit(m) {
     if (ws) { ws.send(m); }
+}
+function rfc(serie, unit, io) {
+  var data = '{"type": "rfc", "cmd": {"serie": "' + serie + '", "unit": "' + unit + '", "io": "' + io + '"}}'
+  if (ws) { ws.send(data); }  
 }
