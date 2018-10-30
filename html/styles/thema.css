@@ -107,7 +107,7 @@ button.bnt_rfc {
     margin: 0;
     padding: 0;
     background-color: #9F0000;
-    color: #FFFFFF;  
+    color: #000000;  
     border-radius: 8px; 
     height: 60px;
     width: 60px;
@@ -125,3 +125,25 @@ article b {
     padding: 0;
     
 }
+article#IR_Control {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 90px;
+    left: 480px;     
+    width: 300px;
+    overflow: auto;  
+    
+} 
+/*article#IR_Control .headline {  
+    border-top-right-radius: 0;    
+}  */
+#ir_controler {   
+    height: 470px;
+    overflow: auto;
+    
+}
+ .adc {
+     font-size: 15pt;
+     font-weight: bold;
+ }

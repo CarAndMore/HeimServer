@@ -73,6 +73,16 @@ function wsConnect() {
                 document.getElementById('tt4').innerHTML = Uhrzeit;
             }
         }
+        if (jsondata.sensor == "adc0") {
+            document.getElementById('adc0').innerHTML = jsondata.value;
+        }
+        if (jsondata.sensor == "adc1") {
+            document.getElementById('adc1').innerHTML = jsondata.value;
+        }
+        if (jsondata.sensor == "adc2") {
+            document.getElementById('adc2').innerHTML = jsondata.value;
+        }
+        
     }
     ws.onopen = function() {
         // update the status div with the connection status
@@ -99,5 +109,9 @@ function doit(m) {
 }
 function rfc(serie, unit, io) {
   var data = '{"type": "rfc", "cmd": {"serie": "' + serie + '", "unit": "' + unit + '", "io": "' + io + '"}}'
-  if (ws) { ws.send(data); }  
+  if (ws) { ws.send(data); }
+}
+function irc(cmd) {
+  var data = '{"type": "irc", "cmd": "' + cmd + '" }'
+  if (ws) { ws.send(data); }
 }

@@ -1,9 +1,4 @@
 <?php
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,10 +87,7 @@
             </div>
             <div id="uhrzeit"></div>
         </header>
-        <section>
-            <h3>
-                Hallo Welt 
-            </h3>   
+        <section>  
             <article>
                 <h4 class="headline">
                     &Uuml;berschrift
@@ -129,22 +121,22 @@
                 <table>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "1", "1") ;'>on</button></td>
-                        <td>AA</td>
+                        <td>RGB Band</td>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "1", "0") ;'>off</button></td>
                     </tr>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "2", "1") ;'>on</button></td>
-                        <td>BB</td>
+                        <td>LED Kette 1</td>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "2", "0") ;'>off</button></td>
                     </tr>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "3", "1") ;'>on</button></td>
-                        <td>CC</td>
+                        <td>Spot 1 LED</td>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "3", "0") ;'>off</button></td>
                     </tr>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "4", "1") ;'>on</button></td>
-                        <td>DD</td>
+                        <td>Spot 2 LED</td>
                         <td><button class="bnt_rfc" onclick='rfc("10111", "4", "0") ;'>off</button></td>
                     </tr>
                 </table>
@@ -153,17 +145,17 @@
                 <table>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("00111", "1", "1") ;'>on</button></td>
-                        <td>AA</td>
+                        <td>Spot 3</td>
                         <td><button class="bnt_rfc" onclick='rfc("00111", "1", "0") ;'>off</button></td>
                     </tr>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("00111", "2", "1") ;'>on</button></td>
-                        <td>BB</td>
+                        <td>LED Kette 2</td>
                         <td><button class="bnt_rfc" onclick='rfc("00111", "2", "0") ;'>off</button></td>
                     </tr>
                     <tr>
                         <td><button class="bnt_rfc" onclick='rfc("00111", "3", "1") ;'>on</button></td>
-                        <td>CC</td>
+                        <td>RGB-C Band</td>
                         <td><button class="bnt_rfc" onclick='rfc("00111", "3", "0") ;'>off</button></td>
                     </tr>
                     <tr>
@@ -175,7 +167,55 @@
                         </td>
                     </tr>
                 </table>
+            </article>  
+                
+            <article id="IR_Control">
+                <h4 class="headline">
+                    IR Control
+                </h4>  
+                <div id="ir_controler">  
+<?php
+$jsonFile = "code.json";
+// Read Json File & decode to Array
+$data =json_decode(file_get_contents($jsonFile), true);
+
+foreach ($data["irc"] as $FB) {
+    echo "<h2>" . $FB["name"] . '</h2>';
+    // Parse and sort in .
+    $col = array(array());
+    foreach ($FB["keys"] as $key) {
+        if (isset($key["color"])) { $color = $key["color"]; }
+        else { $color = "#aaaaaa"; }
+        $col[$key["row"]][$key["column"]] = array('name'=>$key["name"], 'cmd'=>$key["cmd"], 'color'=>$color);
+    }
+    // Output to Table
+    echo "<table>\n";
+    foreach ($col as $l){
+        echo "<tr>\n";
+        foreach ($l as $cell){
+?>
+            <td>
+                <button class="bnt_rfc" style="background-color: <?php echo $cell["color"]; ?>;" onclick='irc("<?php echo $cell["cmd"]; ?>");'><?php echo $cell["name"]; ?></button>
+            </td>
+<?php
+        }
+        echo "</tr>\n";
+    }
+    echo "</table>\n";
+}
+?>
+                </div>
             </article>
+ <!--           
+            <article>
+                <h4 class="headline">
+                    ADC Value
+                </h4>
+                <p>ADC 0 <span class="adc" id="adc0">0</span></p>
+                <p>ADC 1 <span class="adc" id="adc1">1</span></p>
+                <p>ADC 2 <span class="adc" id="adc2">2</span></p>
+            </article>  
+--> 
         </section>
         <footer>
             <p>

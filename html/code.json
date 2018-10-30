@@ -1,0 +1,86 @@
+{
+	"irc":[
+		{
+			"name": "RGB BAND",
+			"CMD_LEN": 32, 
+			"keys":[
+				{"row": 0, "column": 0, "name": "OFF", "cmd": "0xFF41BE"},
+				{"row": 0, "column": 1, "name": "ON", "cmd": "0xFFC13E"},
+				{"row": 0, "column": 2, "name": "UP", "cmd": "0xFF01FE"},
+				{"row": 0, "column": 3, "name": "DOWN", "cmd": "0xFF817E"},				
+				{"row": 1, "column": 0, "name": "ROT", "cmd": "0xFF21DE", "color": "#ff0000"},
+				{"row": 1, "column": 1, "name": "GRUN", "cmd": "0xFFA15E", "color": "#00ff00"},
+				{"row": 1, "column": 2, "name": "BLAU", "cmd": "0xFF619E", "color": "#0000ff"},
+				{"row": 1, "column": 3, "name": "FLASH", "cmd": "0xFFD12E"},				
+				{"row": 2, "column": 0, "name": "c_01", "cmd": "0xFF11EE", "color": "#FF5500"},
+				{"row": 2, "column": 1, "name": "c_02", "cmd": "0xFF916E", "color": "#00FF7F"},
+				{"row": 2, "column": 2, "name": "c_03", "cmd": "0xFF51AE", "color": "#2A00FF"},
+				{"row": 2, "column": 3, "name": "STROBE", "cmd": "0xFFF10E"},				
+				{"row": 3, "column": 0, "name": "c_04", "cmd": "0xFF31CE", "color": "#FFAA00"},
+				{"row": 3, "column": 1, "name": "c_05", "cmd": "0xFFB14E", "color": "#00FFD4"},
+				{"row": 3, "column": 2, "name": "c_06", "cmd": "0xFF718E", "color": "#7F00FF"},
+				{"row": 3, "column": 3, "name": "FADE", "cmd": "0xFFC936"},				
+				{"row": 4, "column": 0, "name": "c_07", "cmd": "0xFF09F6", "color": "#D4FF00"},
+				{"row": 4, "column": 1, "name": "c_08", "cmd": "0xFF8976", "color": "#00D4FF"},
+				{"row": 4, "column": 2, "name": "c_09", "cmd": "0xFF49B6", "color": "#D400FF"},
+				{"row": 4, "column": 3, "name": "SMOOTH", "cmd": "0xFFE916"},				
+				{"row": 5, "column": 0, "name": "c_10", "cmd": "0xFF29D6", "color": "#55FF00"},
+				{"row": 5, "column": 1, "name": "c_11", "cmd": "0xFFA956", "color": "#007FFF"},
+				{"row": 5, "column": 2, "name": "c_12", "cmd": "0xFF6996", "color": "#FF007F"},				
+				{"row": 5, "column": 3, "name": "WEIS", "cmd": "0xFFE11E", "color": "#FFFFFF"}
+			]
+		},
+		{
+			"name": "RGBC BAND",
+			"CMD_LEN": 32, 
+			"keys":[
+				{"row": 0, "column": 0, "name": "ON/OFF", "cmd": "0xF7C03F", "color": "#FF0000"},
+				{"row": 0, "column": 1, "name": "Up", "cmd": "0xF700FF", "color": "#FFFFFF"},
+				{"row": 0, "column": 2, "name": "Down", "cmd": "0xF7807F", "color": "#FFFFFF"},
+				{"row": 0, "column": 3, "name": "w/ww", "cmd": "0xF740BF", "color": "#666666"},
+				{"row": 1, "column": 0, "name": "ic-set", "cmd": "0xF720DF", "color": "#FFFFFF"},
+				{"row": 1, "column": 1, "name": "<|>", "cmd": "0xF7A05F"},
+				{"row": 1, "column": 2, "name": ">|<", "cmd": "0xF7609F"},
+				{"row": 1, "column": 3, "name": "auto", "cmd": "0xF7E01F", "color": "#FFFFFF"},
+				{"row": 2, "column": 0, "name": "CS", "cmd": "0xF710EF", "color": "#FF0000"},
+				{"row": 2, "column": 1, "name": "<<<", "cmd": "0xF7906F"},
+				{"row": 2, "column": 2, "name": ">>>", "cmd": "0xF750AF"},
+				{"row": 2, "column": 3, "name": "RB", "cmd": "0xF7D02F", "color": "#FFFF00"},
+				{"row": 3, "column": 0, "name": "C3", "cmd": "0xF730CF", "color": "#FF5500"},
+				{"row": 3, "column": 1, "name": "<*", "cmd": "0xF7B04F"},
+				{"row": 3, "column": 2, "name": "*>", "cmd": "0xF7708F"},
+				{"row": 3, "column": 3, "name": "FLASH", "cmd": "0xF7F00F", "color": "#0055FF"},
+				{"row": 4, "column": 0, "name": "c7", "cmd": "0xF708F7", "color": "#FFAA00"},
+				{"row": 4, "column": 1, "name": "<---", "cmd": "0xF78877"},
+				{"row": 4, "column": 2, "name": "--->", "cmd": "0xF748B7"},
+				{"row": 4, "column": 3, "name": "Jump", "cmd": "0xF7C837", "color": "#7F00FF"},
+				{"row": 5, "column": 0, "name": "c16", "cmd": "0xF728D7", "color": "#FFFF00"},
+				{"row": 5, "column": 1, "name": "+...", "cmd": "0xF7A857"},
+				{"row": 5, "column": 2, "name": "...+", "cmd": "0xF76897"},
+				{"row": 5, "column": 3, "name": "meteor", "cmd": "0xF7E817", "color": "#FF0000"}
+			]
+		}
+	],
+	"d": {
+			"name": "MINI BEAMER",
+			"CMD_LEN": 32, 
+			"keys":[
+				{"row": 0, "column": 0, "name": "Power", "cmd": "0xC03FB847", "color": "#FF0000"},
+				{"row": 0, "column": 1, "name": "menu", "cmd": "0xC03F7887"},
+				{"row": 0, "column": 2, "name": "mute", "cmd": "0xC03F40BF"},				
+				{"row": 1, "column": 0, "name": "rw", "cmd": "0xC03FE01F"},
+				{"row": 1, "column": 1, "name": "play", "cmd": "0xC03F9867"},
+				{"row": 1, "column": 2, "name": "fw", "cmd": "0xC03FA05F"},				
+				{"row": 2, "column": 0, "name": "return", "cmd": "0xC03FB04F"},
+				{"row": 2, "column": 1, "name": "up", "cmd": "0xC03F906F"},
+				{"row": 2, "column": 2, "name": "imput", "cmd": "0xC03FF807"},				
+				{"row": 3, "column": 0, "name": "left", "cmd": "0xC03F50AF"},
+				{"row": 3, "column": 1, "name": "ok", "cmd": "0xC03FD02F"},
+				{"row": 3, "column": 2, "name": "right", "cmd": "0xC03F10EF"},				
+				{"row": 4, "column": 0, "name": "-", "cmd": "0xC03FA857"},
+				{"row": 4, "column": 1, "name": "down", "cmd": "0xC03F807F"},
+				{"row": 4, "column": 2, "name": "+", "cmd": "0xC03F8877"}
+			]
+		}
+}
+		
